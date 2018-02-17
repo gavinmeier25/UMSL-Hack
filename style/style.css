@@ -7,6 +7,14 @@
   .search-bar input{
   width: 75%;
   }
+  .navbar {
+    margin-bottom: 0;
+    margin-radius: 0;
+    background-color: #5E4485;
+    color: #FFF;
+    padding: 1% 0;
+    font-size: 1.2;
+  }
   
   .video-item img{
     max-width: 64px;
