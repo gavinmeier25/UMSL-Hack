@@ -19,10 +19,10 @@ constructor(props){
   super(props);
   this.state= {
     videos: [],
-    selectedVideo: null
+    selectedVideo: ''
   };
 
-  this.videoSearch('UMSL Hack');
+  this.videoSearch('umsl');
 }
 
   videoSearch(term){
@@ -43,11 +43,13 @@ constructor(props){
 
   return(
     <div>
-      <SearchBar onSearchTermChange ={videoSearch} />
+      <div className="container-fluid">
       <VideoDetail video={this.state.selectedVideo} />
-      <VideoList
+      </div>
+      <SearchBar onSearchTermChange ={videoSearch} />
+      {/* <VideoList
        onVideoSelect = {selectedVideo => this.setState({selectedVideo}) }
-       videos = {this.state.videos} />
+       videos = {this.state.videos} /> */}
     </div>
   );
 }
