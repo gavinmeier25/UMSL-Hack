@@ -8,7 +8,7 @@ import VideoDetail from './components/video_detail';
 
 
 
-const API_KEY = 'AIzaSyDsKPmKpKAxONN9CnEDtldAKIeUfXXW9-o';
+const API_KEY_YT = 'AIzaSyDsKPmKpKAxONN9CnEDtldAKIeUfXXW9-o';
 
 
 
@@ -27,11 +27,11 @@ constructor(props){
 
   videoSearch(term){
 
-    YTSearch({key: API_KEY, term: term},(videos) =>{
+    YTSearch({key: API_KEY_YT, term: term},(videos) =>{
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
-      });
+      }); 
     });
   }
 
@@ -42,20 +42,34 @@ constructor(props){
   const videoSearch = _.debounce((term) => {this.videoSearch(term)}, 300);
 
   return(
-    <div>
+    <div> 
+      <div className="col-md-12">
       <div className="container-fluid">
-      <VideoDetail video={this.state.selectedVideo} />
-      </div>
+      <VideoDetail         style={{    
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            position: 'absolute',
+            width: '300px',
+            height: '200px',
+            top: '30%',
+            left: '50%',
+            margin: '-100px 0 0 -150px',
+        }}  video={this.state.selectedVideo} />
       <SearchBar onSearchTermChange ={videoSearch} />
-      {/* <VideoList
-       onVideoSelect = {selectedVideo => this.setState({selectedVideo}) }
-       videos = {this.state.videos} /> */}
+      </div>
+      </div>
+      <div>
+        <p>Some Text or Something</p>
+      </div>
     </div>
   );
 }
 }
 
 
+/* <VideoList
+ onVideoSelect = {selectedVideo => this.setState({selectedVideo}) }
+ videos = {this.state.videos} /> */
 
 
 ReactDOM.render(<App />, document.querySelector('.container') );
