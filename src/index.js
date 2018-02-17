@@ -5,6 +5,7 @@ import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
+import Navbar from './components/nav_bar';
 
 
 
@@ -43,24 +44,34 @@ constructor(props){
 
   return(
     <div> 
-      <div className="col-md-12">
-      <div className="container-fluid">
-      <VideoDetail         style={{    
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            position: 'absolute',
-            width: '300px',
-            height: '200px',
-            top: '30%',
-            left: '50%',
-            margin: '-100px 0 0 -150px',
-        }}  video={this.state.selectedVideo} />
+      <div className="row">
+      <div className="col-12">
+      <Navbar> </Navbar>
+      
+      
+      </div>
+      
+      </div>
+     
+      
+      <div className="row">
+
+      <div className="col-xs-6">
+      <VideoDetail         
+        video={this.state.selectedVideo} />
       <SearchBar onSearchTermChange ={videoSearch} />
       </div>
+
+      <div className="col-xs-6">
+      <VideoDetail video={this.state.selectedVideo}> </VideoDetail>   
+      </div>
+
+      
       </div>
       <div>
         <p>Some Text or Something</p>
       </div>
+    
     </div>
   );
 }

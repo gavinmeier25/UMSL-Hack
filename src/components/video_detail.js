@@ -10,17 +10,8 @@ return (
     <div className= "video-detail">
         <div>
         <iframe 
-        style={{    
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            position: 'absolute',
-            width: '300px',
-            height: '200px',
-            top: '30%',
-            left: '50%',
-            margin: '-100px 0 0 -150px',
-        }} 
-        src= {url}> </iframe>
+       
+         src= {url}> </iframe>
         </div>
     
     </div>
